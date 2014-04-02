@@ -2,7 +2,7 @@
 
 (load-file "../euler_one.clj")
 
-(deftest no-matches
+(deftest sum_under_1000
   (is (= 233168 (euler/three_five 1000))))
 
 
