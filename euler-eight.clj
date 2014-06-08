@@ -1,7 +1,17 @@
 (ns euler)
 
 (defn series-largest-product [digits series]
-   (map #(reduce *(take digits (drop % series)))(range 0 (- (count series) digits))))
+  (apply max
+    (map
+      #(reduce *
+        (->> series
+          (drop %)
+          (take digits)))
+
+      (range 0
+        (-> series
+          (count)
+          (- digits))))))
 
 
 
